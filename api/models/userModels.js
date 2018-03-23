@@ -9,9 +9,9 @@ const UserSchema = mongoose.Schema({
   // username: required, unique and lowercase
   // password: required
   _id: mongoose.Schema.Types.ObjectId,
-    "username": "Tony@stark.com",
-    "password": "pepperpots"
-  }
+    username: { type: String, required: true, unique: true },
+    password: { type: String, required: true }
+  
 });
 
 UserSchema.pre('save', function(next) {
@@ -19,6 +19,9 @@ UserSchema.pre('save', function(next) {
   // Fill this middleware in with the Proper password encrypting, bcrypt.hash()
   // if there is an error here you'll need to handle it by calling next(err);
   // Once the password is encrypted, call next() so that your userController and create a user
+  bcrypt.hash(password, SALT_ROUNDS, function(err, hash) {
+    // Store hash in your password DB.
+  });
 });
 
 UserSchema.methods.checkPassword = function(plainTextPW, callBack) {
