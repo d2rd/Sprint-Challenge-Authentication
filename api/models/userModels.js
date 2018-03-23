@@ -4,10 +4,14 @@ const Schema = mongoose.Schema;
 
 const SALT_ROUNDS = 11;
 
-const UserSchema = Schema({
+const UserSchema = mongoose.Schema({
   // create your user schema here.
   // username: required, unique and lowercase
   // password: required
+  _id: mongoose.Schema.Types.ObjectId,
+    "username": "Tony@stark.com",
+    "password": "pepperpots"
+  }
 });
 
 UserSchema.pre('save', function(next) {

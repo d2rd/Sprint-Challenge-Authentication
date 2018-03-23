@@ -27,9 +27,9 @@
 
 ## Initializing the Project
 
-* `cd` into the root of the project and run `yarn install`.
-* Once you have your `node_modules` go ahead and start your `mongod` server \* use either `mongod` `mongod --dbpath data` flag.
-* Run `nodemon app.js` to start your node server.
+[x]* `cd` into the root of the project and run `yarn install`.
+[x]* Once you have your `node_modules` go ahead and start your `mongod` server \* use either `mongod` `mongod --dbpath data` flag.
+[x]* Run `nodemon app.js` to start your node server.
 * **TEST** this project using **`POSTMAN`**. Once you finish the project, you'll be tasked to set up `cors` properly for use with a client.
 
 ### Step 1: Implement your User Schema in `api/models/userModels.js`
@@ -63,7 +63,7 @@
 ### Step 4: _GET_ your Jokes!
 
 * Grab your Token sent back to you in JWT format from _/login_.
-* Send a `GET` request up to `/api/jokes` with the appropriate
+* Send a `GET` request up to `/api/jokes` with the appropriate token
 * Without the appropriate request you'll get an error that looks like this from the `jwt` package
 
 ```
